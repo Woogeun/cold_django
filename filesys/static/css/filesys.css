@@ -38,6 +38,7 @@ body {
 }
 
 .contents {
+	position: relative;
 	padding-left: 70px;
 	padding-right: 70px;
 }
@@ -71,7 +72,7 @@ body {
 	display: inline-block;
 	vertical-align: middle;
 	right: 500px;
-	
+
 }
 
 .inner_progress{
@@ -156,13 +157,13 @@ form {
 	display: inline-block;
 }
 
+.canvas_container {
+	text-align: center;
+}
 
-
-
-
-
-
-
+canvas {
+	display: inline-block;
+}
 
 
 
