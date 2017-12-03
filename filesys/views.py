@@ -74,7 +74,6 @@ def upload(request):
 		end = datetime.datetime.now()
 		total_time = end - start
 		total_time = total_time.total_seconds()
-		messages.info(request, 'success!')
 
 		# file block list
 		p_file_block_tmp = glob.glob(uploaded_file_url + '*')
@@ -115,8 +114,9 @@ def upload(request):
 		total_down = total_down.total_seconds()
 		res_json = res.json()
 		original_file_name = res_json["file_name"]
-		cat_command = 'cat ' + '~/' + original_file_name + '*' + ' > ' + '~/' + original_file_name
+		cat_command = 'cat ' + '~/' + original_file_name + '*' + ' > ' + '~/' + 'sold_' + original_file_name
 		subprocess.call ([cat_command], shell=True)
+		subprocess.call (['rm ~/' + original_file_name + '*'], shell=True)
 		return render(request, 'filesys/file_list.html', {'files': file_list, 'message': 'download success', 'time': total_down})
 
 	return render(request, 'filesys/file_list.html', {'files': file_list})
