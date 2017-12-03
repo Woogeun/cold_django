@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 	'filesys',
     'boto',
     'boto3',
-    'progressbarupload',
+    
 ]
 
 FILE_UPLOAD_HANDLERS = (
