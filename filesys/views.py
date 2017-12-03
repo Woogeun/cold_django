@@ -5,7 +5,6 @@ from django.shortcuts import render
 from .forms import UploadFileForm
 from .models import UploadFileModel
 from django.core.files.storage import FileSystemStorage
-from pyquery import PyQuery as pq
 import time
 import os
 
