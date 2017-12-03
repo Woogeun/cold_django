@@ -17,6 +17,11 @@
 </head>
 
 <body>
+	{% if message %}
+		<script type="text/javascript">
+			alert("upload time: {{ time }}")
+		</script>
+	{% endif %}
 	<a href="{% url 'upload' %}">
 		<div class="logo">
 			<div class="yellow-background">C</div>
@@ -40,7 +45,11 @@
 				<div class="image-container">
 					<img src="{% static 'image/route.png' %}">
 				</div>
-				<span>""" {{ fail }} """</span>
+				<span>{{ message }}</span>
+				<!-- <div class="helper"></div>
+				<div class="progress">
+					<div class="inner_progress"></div>
+				</div> -->
 				<div class="upload right">
 					<form method="post" enctype="multipart/form-data" autocomplete="off">
     					{% csrf_token %}
@@ -61,7 +70,7 @@
 							<img src="{% static 'image/file.png' %}">
 						</div>
 						<div class="left" style="display: inline-block; cursor: pointer;">
-							{{ file.name }}
+							{{ file.name }} {{ file.time }}
 						</div>
 						
 						{% csrf_token %}
