@@ -1,0 +1,18 @@
+{% extends 'filesys/file_list.html' %}
+
+{% block content %}
+{% for file in files %}
+	<div class="file">
+		<div class="helper"></div>
+		<div class="image-container">
+			<img src="{% static 'image/file.png' %}">
+		</div>
+		<span>
+			{{ file }}
+		</span>
+		<div class="image-container">
+			<img src="{% static 'image/down-arrow.png' %}">
+		</div>
+	</div>
+{% endfor %}
+{% endblock %}

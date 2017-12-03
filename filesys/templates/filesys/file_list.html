@@ -1,0 +1,79 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COLD</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/filesys.css' %}">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<meta charset='utf-8'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		function extract_mode() {
+			var elem = document.getElementById("mode_select");
+			elem.value = document.getElementById("mode").value;
+		}
+	</script>
+</head>
+
+<body>
+	<a href="{% url 'upload' %}">
+		<div class="logo">
+			<div class="yellow-background">C</div>
+			<div class="stick-bottom">OLD</div>
+		</div>
+	</a>
+
+	<div class="contents">
+		<div><span>Select items to perform actions on them.</span></div>
+		<div class="selection">
+			<select id="mode">
+				<option value="single">Single Device</option>
+				<option value="multi">Multiple Devices</option>
+			</select>
+		</div>
+
+		<div class="container">
+			<div class="controler">
+				<div class="helper">
+				</div>
+				<div class="image-container">
+					<img src="{% static 'image/route.png' %}">
+				</div>
+				<span>""" {{ fail }} """</span>
+				<div class="upload right">
+					<form method="post" enctype="multipart/form-data" autocomplete="off">
+    					{% csrf_token %}
+    					<input type="file" name="file">
+    					<input id="mode_select" type="hidden" name="mode" value="">
+    					<input id="id" type="hidden" name="id" value="">
+    					<input id="X-Progress-ID" type="hidden" name="X-Progress-ID" value="">
+    					<input type="submit" name="submit" value="Upload" onclick="extract_mode();">
+  					</form>
+	        	</div>
+			</div>
+
+			<div class="files">
+				{% for file in files %}
+					<div class="file">
+						<div class="helper"></div>
+						<div class="image-container">
+							<img src="{% static 'image/file.png' %}">
+						</div>
+						<div class="left" style="display: inline-block; cursor: pointer;">
+							{{ file.name }}
+						</div>
+						
+						{% csrf_token %}
+						<a class="right" href="{{ file.url }}" download>
+							<input type="image" src="{% static 'image/down-arrow.png' %}" name="DOWNLOAD" />
+						</a>
+						<div class="helper"></div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

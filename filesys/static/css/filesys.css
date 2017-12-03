@@ -1,0 +1,153 @@
+body {
+	position: fixed;
+	margin: 5px;
+	padding: 0px;
+	width: 100%;
+}
+
+.logo {
+	position: static;
+	font-size: 40px;
+	font-family: 'Lobster', cursive;
+	border-bottom: #DDDDDD 1px solid;
+	display: inline-block;
+	width: 100%;
+	margin-top: 30px;
+	padding: 0px;
+}
+
+.logo .yellow-background {
+	position: relative;
+	background: #fff100;
+	color: white;
+	float: left;
+	padding-left: 10px;
+	padding-right: 10px;
+	left: 70px;
+	bottom: 10px;
+	margin: 0px;
+}
+
+.logo .stick-bottom {
+	position: relative;
+	color: #fff100;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	left: 70px;
+}
+
+.contents {
+	padding-left: 70px;
+	padding-right: 70px;
+}
+
+.contents .selection {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.contents .container {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.contents .container .controler {
+	position: relative;
+	background-color: #DDDDDD;
+	border: 0.5px #DDDDDD solid;
+	height: 35px;
+	width: 100%;
+	text-align: left;
+}
+
+.image-container {
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.contents .container .controler span {
+	
+	vertical-align: middle;
+	margin-left: 20px;
+}
+
+.contents .container .files {
+
+}
+
+.contents .container .files .file {
+	position: relative;
+	width: 100%;
+	height: 35px;
+	border-left: 0.5px #DDDDDD solid;
+	border-right: 0.5px #DDDDDD solid;
+	border-bottom: 0.5px #DDDDDD solid;
+	margin: 0px;
+	text-overflow: ellipsis;
+}
+
+.contents .container .files .file span {
+	vertical-align: middle;
+}
+
+.upload {
+	display: inline-block;
+	margin: 0px;
+	color: #DDDDDD;
+	background-color: white;
+	border-radius: 5px;
+	padding-top: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.right {
+	position: absolute;
+	right: 10px;
+	top: 7px;
+}
+
+.left {
+	margin-left: 20px;
+}
+
+.directory {
+	color: #DDDDFF;
+}
+
+
+
+.helper {
+	position: relative;
+	height: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+}
+
+form {
+	display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
